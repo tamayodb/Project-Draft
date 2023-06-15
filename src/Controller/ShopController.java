@@ -365,6 +365,15 @@ public class ShopController implements Initializable{
    
     @FXML
     public void gotoCart(ActionEvent event) throws IOException {
+        if (!isAnyItemAdded()) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Empty Cart");
+        alert.setHeaderText(null);
+        alert.setContentText("You have no items in your cart.");
+        alert.showAndWait();
+        return;
+    }
+
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation");
         alert.setHeaderText(null);
@@ -381,4 +390,13 @@ public class ShopController implements Initializable{
             stage.show();
         }
     }
+    private boolean isAnyItemAdded() {
+        if (c1.getProductStatus() || c2.getProductStatus() || c3.getProductStatus() ||
+                d1.getProductStatus() || d2.getProductStatus() || d3.getProductStatus() ||
+                s1.getProductStatus() || s2.getProductStatus() || s3.getProductStatus()) {
+            return true;
+        }
+        return false;
+    }
+
 }

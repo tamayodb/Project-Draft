@@ -33,7 +33,7 @@
         Label qty1, qty2, qty3, qty4, qty5, qty6, qty7, qty8, qty9;
 
         @FXML
-        Label totall, paytotal, paytotal1, orderID;
+        Label totall, paytotal, paytotal1, orderID, shipping;
 
         @FXML
         Label customerdistrict, customername, customerstreetaddress, customerzipcode, customernumber;
@@ -181,6 +181,7 @@
         public void addItem(Pane pane) {
             if (!myvbox.getChildren().contains(pane)) {
                 myvbox.getChildren().add(pane);
+                shipping.setVisible(true);
             }
         }
 

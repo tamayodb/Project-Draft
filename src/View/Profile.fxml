@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
@@ -78,38 +78,36 @@
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="209.0" layoutY="468.0" prefHeight="22.0" prefWidth="128.0" text="Phone Number" textFill="#1b0e70">
+      <Label layoutX="209.0" layoutY="474.0" prefHeight="22.0" prefWidth="128.0" text="Phone Number" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="274.0" layoutY="513.0" prefHeight="22.0" prefWidth="71.0" text="Gender" textFill="#1b0e70">
+      <Label layoutX="274.0" layoutY="525.0" prefHeight="22.0" prefWidth="71.0" text="Gender" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
-      <RadioButton fx:id="maleRadioButton" layoutX="352.0" layoutY="509.0" mnemonicParsing="false" onAction="#handleMaleRadioButton" text="Male" textFill="#1b0e70">
+      <RadioButton fx:id="maleRadioButton" layoutX="352.0" layoutY="521.0" mnemonicParsing="false" onAction="#handleMaleRadioButton" text="Male" textFill="#1b0e70">
          <font>
             <Font size="19.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="femaleRadioButton" layoutX="470.0" layoutY="509.0" mnemonicParsing="false" onAction="#handleFemaleRadioButton" text="Female" textFill="#1b0e70">
+      <RadioButton fx:id="femaleRadioButton" layoutX="446.0" layoutY="521.0" mnemonicParsing="false" onAction="#handleFemaleRadioButton" text="Female" textFill="#1b0e70">
          <font>
             <Font size="19.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="otherRadioButton" layoutX="591.0" layoutY="509.0" mnemonicParsing="false" onAction="#handleOtherRadioButton" text="Other" textFill="#1b0e70">
+      <RadioButton fx:id="otherRadioButton" layoutX="567.0" layoutY="521.0" mnemonicParsing="false" onAction="#handleOtherRadioButton" text="Other" textFill="#1b0e70">
          <font>
             <Font size="19.0" />
          </font>
       </RadioButton>
-      <Label layoutX="231.0" layoutY="556.0" prefHeight="22.0" prefWidth="107.0" text="Date of birth" textFill="#1b0e70">
+      <Label layoutX="231.0" layoutY="573.0" prefHeight="22.0" prefWidth="107.0" text="Date of birth" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="monthChoiceBox" layoutX="456.0" layoutY="553.0" prefHeight="28.0" prefWidth="153.0" />
-      <ChoiceBox fx:id="yearChoiceBox" layoutX="620.0" layoutY="553.0" prefHeight="28.0" prefWidth="107.0" />
       <Line endX="-100.0" endY="262.0" layoutX="950.0" layoutY="318.0" startX="-100.0" stroke="#1b0e70" />
       <ImageView accessibleRole="BUTTON" fitHeight="33.0" fitWidth="146.0" layoutX="960.0" layoutY="318.0">
          <image>
@@ -126,7 +124,7 @@
             <Font name="Arial Black" size="23.29" />
          </font>
       </Button>
-      <Button layoutX="847.0" layoutY="50.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="132.0" style="-fx-background-color: #ffffff;" styleClass="hoverstyle" stylesheets="@hoverstyle.css" text="Blogs" textFill="#e69dda">
+      <Button layoutX="847.0" layoutY="50.0" mnemonicParsing="false" onAction="#gotoShop" prefHeight="35.0" prefWidth="132.0" style="-fx-background-color: #ffffff;" styleClass="hoverstyle" stylesheets="@hoverstyle.css" text="Shop" textFill="#e69dda">
          <font>
             <Font name="Arial Black" size="23.29" />
          </font>
@@ -136,7 +134,7 @@
             <Font name="Arial Black" size="23.29" />
          </font>
       </Button>
-      <Button layoutX="708.0" layoutY="50.0" mnemonicParsing="false" onAction="#gotoShop" prefHeight="35.0" prefWidth="107.0" style="-fx-background-color: #ffffff;" styleClass="hoverstyle" stylesheets="@hoverstyle.css" text="Shop" textFill="#e69dda">
+      <Button layoutX="708.0" layoutY="50.0" mnemonicParsing="false" onAction="#gotoBlog" prefHeight="35.0" prefWidth="107.0" style="-fx-background-color: #ffffff;" styleClass="hoverstyle" stylesheets="@hoverstyle.css" text="Blogs" textFill="#e69dda">
          <font>
             <Font name="Arial Black" size="23.29" />
          </font>
@@ -172,26 +170,44 @@
          </image>
       </ImageView>
       <Button fx:id="nextimage" layoutX="1178.0" layoutY="439.0" mnemonicParsing="false" onAction="#nextimage" opacity="0.0" prefHeight="42.0" prefWidth="36.0" text="nextimage" />
-      <Label layoutX="359.0" layoutY="316.0" text="Jane123" textFill="#1b0e70">
+      <ComboBox fx:id="dayComboBox" layoutX="350.0" layoutY="572.0" prefHeight="24.0" prefWidth="71.0" promptText="Day" style="-fx-background-color: DDE6ED;" visibleRowCount="5" />
+      <ComboBox fx:id="monthComboBox" layoutX="446.0" layoutY="572.0" prefHeight="24.0" prefWidth="107.0" promptText="Month" style="-fx-background-color: DDE6ED;" visibleRowCount="5" />
+      <ComboBox fx:id="yearComboBox" layoutX="570.0" layoutY="572.0" prefHeight="24.0" prefWidth="79.0" promptText="Year" style="-fx-background-color: DDE6ED;" visibleRowCount="5" />
+      <TextField fx:id="usernameTF" layoutX="350.0" layoutY="316.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="155.0" style="-fx-background-color: DDE6ED;">
          <font>
-            <Font name="Arial Black" size="17.0" />
+            <Font name="Arial" size="14.0" />
          </font>
-      </Label>
-      <Label layoutX="359.0" layoutY="370.0" text="Jane Doe" textFill="#1b0e70">
+      </TextField>
+      <TextField fx:id="nameTF" layoutX="350.0" layoutY="371.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="155.0" style="-fx-background-color: DDE6ED;">
          <font>
-            <Font name="Arial Black" size="17.0" />
+            <Font name="Arial" size="14.0" />
          </font>
-      </Label>
-      <Label layoutX="364.0" layoutY="420.0" text="janedoe@gmail.com" textFill="#1b0e70">
+      </TextField>
+      <TextField fx:id="emailTF" layoutX="350.0" layoutY="420.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="155.0" style="-fx-background-color: DDE6ED;">
          <font>
-            <Font name="Arial Black" size="17.0" />
+            <Font name="Arial" size="14.0" />
          </font>
-      </Label>
-      <Label layoutX="364.0" layoutY="466.0" text="0997 335 3289" textFill="#1b0e70">
+      </TextField>
+      <TextField fx:id="numberTF" layoutX="350.0" layoutY="472.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="155.0" style="-fx-background-color: DDE6ED;">
          <font>
-            <Font name="Arial Black" size="17.0" />
+            <Font name="Arial" size="14.0" />
          </font>
-      </Label>
-      <TextField fx:id="date" layoutX="348.0" layoutY="553.0" onAction="#handleDateValidation" prefHeight="28.0" prefWidth="97.0" promptText="Date" />
+      </TextField>
+      <Button fx:id="save" layoutX="1094.0" layoutY="241.0" mnemonicParsing="false" onAction="#handleSaveButton" style="-fx-background-color: #1b0e70;" text="Save" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="edit" layoutX="1168.0" layoutY="241.0" mnemonicParsing="false" onAction="#handleEditButton" style="-fx-background-color: #1b0e70;" text="Edit" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="usernameValidationLabel" layoutX="351.0" layoutY="346.0" prefHeight="17.0" prefWidth="320.0" textFill="#1b0e70" />
+      <Label fx:id="nameValidationLabel" layoutX="350.0" layoutY="400.0" prefHeight="17.0" prefWidth="235.0" textFill="#1b0e70" />
+      <Label fx:id="emailValidationLabel" layoutX="350.0" layoutY="450.0" prefHeight="17.0" prefWidth="235.0" textFill="#1b0e70" />
+      <Label fx:id="numberValidationLabel" layoutX="350.0" layoutY="502.0" prefHeight="17.0" prefWidth="235.0" textFill="#1b0e70" />
+      <Label fx:id="radioValidationLabel" layoutX="350.0" layoutY="547.0" prefHeight="17.0" prefWidth="185.0" textFill="#1b0e70" />
+      <Label fx:id="dateValidationLabel" layoutX="350.0" layoutY="603.0" prefHeight="17.0" prefWidth="185.0" textFill="#1b0e70" />
    </children>
 </Pane>

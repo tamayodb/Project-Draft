@@ -2,6 +2,7 @@ package Controller;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Optional;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +14,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -30,62 +32,47 @@ public class ProfileController {
     StackPane stackPane;
 
     @FXML
+    Button save, edit;
+
+    @FXML
     Button nextimage;
 
     @FXML
-    TextField date;
-
-    @FXML
-    Label notvalidDate;
+    TextField usernameTF, nameTF, emailTF, numberTF;
 
     @FXML
     RadioButton maleRadioButton, femaleRadioButton, otherRadioButton;
 
     @FXML
-    private ChoiceBox<String> monthChoiceBox;
+    Label usernameValidationLabel, nameValidationLabel, emailValidationLabel, numberValidationLabel, radioValidationLabel, dateValidationLabel; 
 
     @FXML
-    private ChoiceBox<Integer> yearChoiceBox;
-
-    
+    private ComboBox<String> monthComboBox;
 
     @FXML
-    private void handleDateValidation(ActionEvent event) {
-        String input = date.getText();
-        isValidDate(input);
-    }
+    private ComboBox<Integer> dayComboBox;
 
-    public boolean isValidDate(String input) {
-        if (!input.matches("\\d+")) {
-            notvalidDate.setVisible(true);
-        }
+    @FXML
+    private ComboBox<Integer> yearComboBox;
 
-        int dateValue = Integer.parseInt(input);
-
-        if (dateValue < 1 || dateValue > 31) {
-            notvalidDate.setVisible(true); 
-            return false;
-        }
-
-        notvalidDate.setVisible(false); 
-        return true;
-    }
-
+    BlogController blogController = null;
 
     public void initialize() {
-   
-
         String[] months = {
             "January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"
         };
-    
-        monthChoiceBox.getItems().addAll(months);
 
-    
+        monthComboBox.getItems().addAll(months);
+
         int currentYear = LocalDate.now().getYear();
         for (int i = currentYear - 50; i <= currentYear; i++) {
-            yearChoiceBox.getItems().add(i);
+            yearComboBox.getItems().add(i);
+        }
+
+        int daysInMonth = LocalDate.now().lengthOfMonth();
+        for (int i = 1; i <= daysInMonth; i++) {
+            dayComboBox.getItems().add(i);
         }
     }
 
@@ -110,6 +97,106 @@ public class ProfileController {
         femaleRadioButton.setDisable(selected);
     }
 
+    private boolean isSaved = false;
+
+    @FXML
+    private void handleEditButton(ActionEvent event) {
+        if (isSaved) {
+            // Enable the buttons and fields
+            nextimage.setDisable(false);
+            usernameTF.setDisable(false);
+            nameTF.setDisable(false);
+            emailTF.setDisable(false);
+            numberTF.setDisable(false);
+            maleRadioButton.setDisable(false);
+            femaleRadioButton.setDisable(false);
+            otherRadioButton.setDisable(false);
+            monthComboBox.setDisable(false);
+            dayComboBox.setDisable(false);
+            yearComboBox.setDisable(false);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Save Required");
+            alert.setContentText("Please save your changes before editing.");
+
+        }
+    }
+
+
+    @FXML
+    private void handleSaveButton(ActionEvent event) {
+        
+        boolean isValid = true;
+
+        String username = usernameTF.getText().trim();
+        if (!username.matches("[a-zA-Z0-9]+")) {
+            isValid = false;
+            usernameValidationLabel.setText("Username must contain only letters and numbers.");
+        } else {
+            usernameValidationLabel.setText("");
+        }
+
+        String name = nameTF.getText().trim();
+        if (name.isEmpty()) {
+            isValid = false;
+            nameValidationLabel.setText("Name is required.");
+        } else {
+            nameValidationLabel.setText("");
+        }
+
+        String email = emailTF.getText().trim();
+        if (!email.endsWith("@gmail.com")) {
+            isValid = false;
+            emailValidationLabel.setText("Email must end with '@gmail.com'.");
+        } else {
+            emailValidationLabel.setText("");
+        }
+
+        String number = numberTF.getText().trim();
+        if (number.length() != 11 || !number.matches("[0-9]+")) {
+            isValid = false;
+            numberValidationLabel.setText("Number must be 11 digits.");
+        } else {
+            numberValidationLabel.setText("");
+        }
+
+        boolean isRadioButtonSelected = maleRadioButton.isSelected()
+                || femaleRadioButton.isSelected()
+                || otherRadioButton.isSelected();
+        if (!isRadioButtonSelected) {
+            isValid = false;
+            radioValidationLabel.setText("Please select one.");
+        } else {
+            radioValidationLabel.setText("");
+        }
+
+        boolean isMonthSelected = monthComboBox.getSelectionModel().getSelectedItem() != null;
+        boolean isDaySelected = dayComboBox.getSelectionModel().getSelectedItem() != null;
+        boolean isYearSelected = yearComboBox.getSelectionModel().getSelectedItem() != null;
+        if (!isMonthSelected || !isDaySelected || !isYearSelected) {
+            isValid = false;
+            dateValidationLabel.setText("Please select date of birth.");
+        } else {
+            dateValidationLabel.setText("");
+        }
+
+        if (isValid) {
+
+            nextimage.setDisable(true);
+            usernameTF.setDisable(true);
+            nameTF.setDisable(true);
+            emailTF.setDisable(true);
+            numberTF.setDisable(true);
+            maleRadioButton.setDisable(true);
+            femaleRadioButton.setDisable(true);
+            otherRadioButton.setDisable(true);
+            monthComboBox.setDisable(true);
+            dayComboBox.setDisable(true);
+            yearComboBox.setDisable(true);
+
+            isSaved = true;
+        }
+    }
 
 
     //STACK PANE CONTROL
@@ -155,6 +242,14 @@ public class ProfileController {
         stage.show();
     }
     public void gotoShop(ActionEvent event) throws IOException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText(null);
+        alert.setContentText("Are you sure you want to proceed? There is no going back!");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ShopProducts.fxml"));
         Parent root = loader.load();
@@ -162,17 +257,21 @@ public class ProfileController {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+        }
     }
 
-    public void gotoCart(ActionEvent event) throws IOException {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Cart1of2.fxml"));
-        Parent root = loader.load();
+    @FXML
+    public void gotoBlog(ActionEvent event) throws IOException {
+       Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/Webview.fxml"));
+          Parent root = loader.load();
+          blogController = loader.getController();
 
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
+          Scene scene = new Scene(root);
+          stage.setScene(scene);
+          stage.show();
+   }
 
     public void gotoLogin(ActionEvent event) throws IOException {
         Alert confirmation = new Alert(AlertType.CONFIRMATION);

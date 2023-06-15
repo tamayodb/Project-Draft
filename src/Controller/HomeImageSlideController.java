@@ -45,6 +45,9 @@ public class HomeImageSlideController implements Initializable {
     ProfileController profileController = null;
 
     @FXML
+    BlogController blogController = null;
+
+    @FXML
     SigninController loginController = null;
 
 
@@ -123,7 +126,7 @@ public class HomeImageSlideController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation");
         alert.setHeaderText(null);
-        alert.setContentText("Are you sure you want to go to Cart? There is no going back!");
+        alert.setContentText("Are you sure you want to proceed? There is no going back!");
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -152,6 +155,19 @@ public class HomeImageSlideController implements Initializable {
           stage.setScene(scene);
           stage.show();
   }
+
+   @FXML
+   public void gotoBlog(ActionEvent event) throws IOException {
+       Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/Webview.fxml"));
+          Parent root = loader.load();
+          blogController = loader.getController();
+
+          Scene scene = new Scene(root);
+          stage.setScene(scene);
+          stage.show();
+   }
+
   //GO TO LOGIN CONTROL
   @FXML
    public void gotoLogin(ActionEvent event) throws IOException {

@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="786.05" prefWidth="1397.42" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AboutController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="786.05" prefWidth="1397.42" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AboutController">
    <children>
       <ImageView fitHeight="140.97" fitWidth="138.29" layoutX="75.5" layoutY="10.0">
          <image>
@@ -158,7 +158,7 @@
             <Font name="Arial Black" size="23.29" />
          </font>
       </Button>
-      <Button fx:id="blogsbutton1" layoutX="684.0" layoutY="55.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="132.0" style="-fx-background-color: #ffffff;" styleClass="hoverstyle" stylesheets="@hoverstyle.css" text="Blogs" textFill="#e69dda">
+      <Button fx:id="blogsbutton1" layoutX="684.0" layoutY="55.0" mnemonicParsing="false" onAction="#gotoBlog" prefHeight="35.0" prefWidth="132.0" style="-fx-background-color: #ffffff;" styleClass="hoverstyle" stylesheets="@hoverstyle.css" text="Blogs" textFill="#e69dda">
          <font>
             <Font name="Arial Black" size="23.29" />
          </font>
