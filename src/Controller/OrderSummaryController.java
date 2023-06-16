@@ -4,6 +4,7 @@
     import java.net.URL;
     import java.util.Random;
     import java.util.ResourceBundle;
+    
 
     import javafx.event.ActionEvent;
     import javafx.fxml.FXML;
@@ -17,6 +18,7 @@
     import javafx.scene.control.Alert.AlertType;
     import javafx.scene.control.ButtonType;
     import javafx.scene.control.Label;
+    import javafx.scene.control.TextField;
     import javafx.scene.layout.Pane;
     import javafx.scene.layout.VBox;
     import javafx.stage.Stage;
@@ -36,10 +38,13 @@
         Label totall, paytotal, paytotal1, orderID, shipping;
 
         @FXML
-        Label customerdistrict, customername, customerstreetaddress, customerzipcode, customernumber;
+        Label customerdistrict, customername, customerstreetaddress, customerzipcode, customernumber, customeremail, cardnameLabel, cardnumberLabel;
 
         @FXML
-        Button gotoHome, showTeam;
+        Button gotoHome, showTeam, emailreceipt;
+
+        @FXML
+        TextField emailTF;
 
         @FXML
         Pane pane1, pane2, pane3, pane4, pane5, pane6, pane7, pane8, pane9;
@@ -181,17 +186,25 @@
         public void addItem(Pane pane) {
             if (!myvbox.getChildren().contains(pane)) {
                 myvbox.getChildren().add(pane);
-                shipping.setVisible(true);
             }
         }
 
-        public void setCustomerDetails(String name, String number, String street, String zip, String selectedDistrict) {
+        public void setCustomerDetails(String name, String number, String street, String zip, String selectedDistrict, String email) {
             customername.setText(name);
             customernumber.setText(number);
             customerstreetaddress.setText(street);
             customerzipcode.setText(zip);
             customerdistrict.setText(selectedDistrict);
+            customeremail.setText(email);
         }
+
+        public void setCardDetails(String cname, String cnumber) {
+            String cardName = cname;
+            String cardNumber = cnumber;
+
+            cardnameLabel.setText(cardName);
+            cardnumberLabel.setText(cardNumber);
+        }   
 
         private String generateRandomOrderID() {
             Random random = new Random();
@@ -229,6 +242,26 @@
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/Team.fxml"));
             Parent root = loader.load();
             teamController = loader.getController();
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+         
+        public void gotoEmail(ActionEvent event) throws IOException {
+            Stage stage = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/EmailReceipt.fxml"));
+            Parent root = loader.load();
+
+             EmailReceiptController emailReceiptController = loader.getController();
+                
+                emailReceiptController.setUserEmail(customeremail.getText());
+                emailReceiptController.setOrderID(orderID.getText());
+                emailReceiptController.setOrderTotal(paytotal1.getText());
+                emailReceiptController.setShippingDetails(customername.getText(), customernumber.getText(), customerstreetaddress.getText(), customerdistrict.getText(), customerzipcode.getText());
+                emailReceiptController.setDearName(customername.getText());
+                emailReceiptController.setCardDetails(cardnameLabel.getText(), cardnumberLabel.getText());
+
 
             Scene scene = new Scene(root);
             stage.setScene(scene);

@@ -49,7 +49,7 @@ public class Cart2of2Controller implements Initializable {
     Label cardnameWarningLabel, cardnumberWarningLabel, cvvWarningLabel;
 
     @FXML
-    Label customerdistrict, customername, customerstreetaddress, customerzipcode, customernumber;
+    Label customerdistrict, customername, customerstreetaddress, customerzipcode, customernumber, customeremail;
 
     
     @FXML
@@ -77,6 +77,9 @@ public class Cart2of2Controller implements Initializable {
  
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        monthChoiceBox.setValue("1");
+        yearChoiceBox.setValue("2024");
 
         if (ShopController.c1.getProductStatus()) {
             namec1.setText(ShopController.c1.getProductName());
@@ -200,7 +203,7 @@ public class Cart2of2Controller implements Initializable {
 
         
             int currentYear = LocalDate.now().getYear();
-        for (int i = currentYear; i <= currentYear + 10; i++) {
+        for (int i = currentYear+1; i <= currentYear + 10; i++) {
             yearChoiceBox.getItems().add(String.valueOf(i));
         }
     }
@@ -218,17 +221,19 @@ public class Cart2of2Controller implements Initializable {
         customerstreetaddress.setText(street);
         customerzipcode.setText(zip);
         customerdistrict.setText(selectedDistrict);
+        customeremail.setText(email);
+
     }
 
 
     public void validateFields(ActionEvent event) {
-        String name = cardname.getText();
-        String number = cardnumber.getText();
+        String cname = cardname.getText();
+        String cnumber = cardnumber.getText();
         String cvvText = cvv.getText();
 
         boolean validationsPassed = true;
 
-        if (name.isEmpty()) {
+        if (cname.isEmpty()) {
             cardnameWarningLabel.setText("Card Name is required.");
             cardnameWarningLabel.setVisible(true);
             validationsPassed = false;
@@ -236,7 +241,7 @@ public class Cart2of2Controller implements Initializable {
            cardnameWarningLabel.setVisible(false);
         }
 
-        if (!number.matches("\\d{12}")) {
+        if (!cnumber.matches("\\d{12}")) {
             cardnumberWarningLabel.setText("Card Number should have 12 digits.");
             cardnumberWarningLabel.setVisible(true);
             validationsPassed = false;
@@ -244,12 +249,18 @@ public class Cart2of2Controller implements Initializable {
            cardnumberWarningLabel.setVisible(false);
         }
 
-        if (!cvvText.matches("\\d{3}")) {
+        if (cvvText.isEmpty()) {
+            cvvWarningLabel.setText("CVV is required.");
+            cvvWarningLabel.setVisible(true);
+            validationsPassed = false;
+        } else if (!cvvText.matches("\\d{3}")) {
             cvvWarningLabel.setText("CVV should have 3 digits.");
             cvvWarningLabel.setVisible(true);
+            validationsPassed = false;
         } else {
-           cvvWarningLabel.setVisible(false);
+            cvvWarningLabel.setVisible(false);
         }
+
 
         if (validationsPassed) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -271,10 +282,12 @@ public class Cart2of2Controller implements Initializable {
                     customernumber.getText(),
                     customerstreetaddress.getText(),
                     customerzipcode.getText(),
-                    customerdistrict.getText()
+                    customerdistrict.getText(),
+                    customeremail.getText()
                     );
+                    orderSummaryController.setCardDetails(cname, cnumber);
 
-            
+                    
                     Scene scene = new Scene(root);
                     stage.setScene(scene);
                     stage.show();

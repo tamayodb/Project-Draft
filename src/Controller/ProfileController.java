@@ -118,7 +118,7 @@ public class ProfileController {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Save Required");
             alert.setContentText("Please save your changes before editing.");
-
+            alert.showAndWait();
         }
     }
 

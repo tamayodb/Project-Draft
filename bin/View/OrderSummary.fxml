@@ -391,7 +391,7 @@
             <Font name="Arial Bold" size="17.0" />
          </font>
       </Label>
-      <Label fx:id="shipping" layoutX="1193.0" layoutY="527.0" prefHeight="19.0" prefWidth="101.0" text="38.0" textFill="WHITE" visible="false">
+      <Label fx:id="shipping" layoutX="1193.0" layoutY="527.0" prefHeight="19.0" prefWidth="101.0" text="38.0" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="17.0" />
          </font>
@@ -527,5 +527,15 @@
          </font>
       </Label>
       <Button fx:id="showTeam" layoutX="192.0" layoutY="573.0" mnemonicParsing="false" onAction="#gotoTeam" opacity="0.0" prefHeight="38.0" prefWidth="159.0" text="Button" />
+      <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="833.0" layoutY="578.0">
+         <image>
+            <Image url="@../Images/paper-plane.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="emailreceipt" layoutX="833.0" layoutY="577.0" mnemonicParsing="false" onAction="#gotoEmail" opacity="0.0" prefHeight="30.0" prefWidth="36.0" text="emaiolreceipt" />
+      <Label fx:id="customeremail" layoutX="704.0" layoutY="584.0" prefHeight="17.0" prefWidth="131.0" text="Label" textFill="#1b0e70" />
+      <Label layoutX="588.0" layoutY="584.0" prefHeight="17.0" prefWidth="119.0" text="Send me a receipt at" textFill="#1b0e70" />
+      <Label fx:id="cardnameLabel" layoutX="192.0" layoutY="739.0" text="Label" visible="false" />
+      <Label fx:id="cardnumberLabel" layoutX="258.0" layoutY="739.0" text="Label" visible="false" />
    </children>
 </Pane>

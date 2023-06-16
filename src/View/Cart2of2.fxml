@@ -463,5 +463,6 @@
       <Label fx:id="priced1" layoutX="36.0" layoutY="604.0" text="Label" visible="false" />
       <Label fx:id="priced2" layoutX="36.0" layoutY="622.0" text="Label" visible="false" />
       <Label fx:id="priced3" layoutX="36.0" layoutY="645.0" text="Label" visible="false" />
+      <Label fx:id="customeremail" layoutX="14.0" layoutY="748.0" text="Label" visible="false" />
    </children>
 </Pane>
