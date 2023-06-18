@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -132,5 +133,8 @@
             <Font name="Arial Black" size="12.0" />
          </font>
       </Label>
+      <Hyperlink layoutX="226.0" layoutY="625.0" onAction="#gotoFB" prefHeight="63.0" prefWidth="58.0" style="-fx-text-fill: transparent; -fx-border-color: transparent;" text="fb" />
+      <Hyperlink layoutX="321.0" layoutY="626.0" onAction="#gotoGMAIL" prefHeight="63.0" prefWidth="58.0" style="-fx-text-fill: transparent; -fx-border-color: transparent;" text="gmail" />
+      <Hyperlink layoutX="415.0" layoutY="625.0" onAction="#gotoIG" prefHeight="63.0" prefWidth="58.0" style="-fx-text-fill: transparent; -fx-border-color: transparent;" text="ig" />
    </children>
 </Pane>

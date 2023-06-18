@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,6 +23,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class Cart2of2Controller implements Initializable {
     @FXML
@@ -287,7 +289,6 @@ public class Cart2of2Controller implements Initializable {
                     );
                     orderSummaryController.setCardDetails(cname, cnumber);
 
-                    
                     Scene scene = new Scene(root);
                     stage.setScene(scene);
                     stage.show();

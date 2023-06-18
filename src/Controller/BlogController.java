@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.animation.FadeTransition;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,6 +21,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebHistory;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class BlogController implements Initializable{
 
@@ -55,6 +57,11 @@ public class BlogController implements Initializable{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/About.fxml"));
             Parent root = loader.load();
 
+            FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
+            fadeTransition.setFromValue(0.0);
+            fadeTransition.setToValue(1.0);
+            fadeTransition.play();
+
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
@@ -71,6 +78,11 @@ public class BlogController implements Initializable{
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/ShopProducts.fxml"));
         Parent root = loader.load();
+        
+         FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
+            fadeTransition.setFromValue(0.0);
+            fadeTransition.setToValue(1.0);
+            fadeTransition.play();
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -85,6 +97,11 @@ public class BlogController implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/Home.fxml"));
         Parent root = loader.load();
 
+         FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
+            fadeTransition.setFromValue(0.0);
+            fadeTransition.setToValue(1.0);
+            fadeTransition.play();
+
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -94,6 +111,11 @@ public class BlogController implements Initializable{
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Profile.fxml"));
         Parent root = loader.load();
+
+         FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
+            fadeTransition.setFromValue(0.0);
+            fadeTransition.setToValue(1.0);
+            fadeTransition.play();
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -112,6 +134,11 @@ public class BlogController implements Initializable{
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/Signin.fxml"));
             Parent root = loader.load();
+
+            FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
+            fadeTransition.setFromValue(0.0);
+            fadeTransition.setToValue(1.0);
+            fadeTransition.play();
 
             Scene scene = new Scene(root);
             stage.setScene(scene);

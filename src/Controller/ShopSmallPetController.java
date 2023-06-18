@@ -1,12 +1,14 @@
 package Controller;
 import java.io.IOException;
 
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -56,6 +58,11 @@ public class ShopSmallPetController {
     public void gotoSmallPetProd1(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/View/SmallProduct1.fxml")); 
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+         FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1), root);
+            fadeTransition.setFromValue(0.0);
+            fadeTransition.setToValue(1.0);
+            fadeTransition.play();
         
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -67,6 +74,11 @@ public class ShopSmallPetController {
     public void gotoSmallPetProd2(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/View/SmallProduct2.fxml")); 
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+         FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1), root);
+            fadeTransition.setFromValue(0.0);
+            fadeTransition.setToValue(1.0);
+            fadeTransition.play();
         
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -78,6 +90,11 @@ public class ShopSmallPetController {
     public void gotoSmallPetProd3(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/View/SmallProduct3.fxml")); 
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+         FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1), root);
+            fadeTransition.setFromValue(0.0);
+            fadeTransition.setToValue(1.0);
+            fadeTransition.play();
         
         Scene scene = new Scene(root);
         stage.setScene(scene);

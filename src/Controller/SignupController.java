@@ -1,9 +1,12 @@
 package Controller;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class SignupController {
 
@@ -79,6 +83,13 @@ public class SignupController {
             Parent root = loader.load();
             signinController = loader.getController();
 
+            signinController.setUsernameAndPassword(username, password);
+
+            FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
+            fadeTransition.setFromValue(0.0);
+            fadeTransition.setToValue(1.0);
+            fadeTransition.play();
+
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
@@ -101,5 +112,35 @@ public class SignupController {
 
     private boolean isValidPassword(String password) {
         return password.matches("^(?=.*\\d)(?=.*[^a-zA-Z\\d\\s]).+$");
+    }
+
+      //go to fb
+    @FXML
+    void gotoFB(ActionEvent event) {
+        try {
+            java.awt.Desktop.getDesktop().browse(new URI("https://www.facebook.com/people/Paw/100093524298470/"));
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //go to gmail
+    @FXML
+    void gotoGMAIL(ActionEvent event) {
+        try {
+            java.awt.Desktop.getDesktop().browse(new URI("https://mail.google.com/mail/u/0/?fs=1&to=pawpetshop.ph@gmail.com&su=SUBJECT&body=BODY&bcc=pawpetshop.ph@gmail.com&tf=cm"));
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //go to ig
+    @FXML
+    void gotoIG(ActionEvent event) {
+        try {
+            java.awt.Desktop.getDesktop().browse(new URI("https://www.instagram.com/pawpetshop_ph/"));
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
     }
 }

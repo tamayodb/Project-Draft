@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Optional;
 
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,6 +24,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class ProfileController {
     @FXML
@@ -227,6 +229,11 @@ public class ProfileController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Home.fxml"));
         Parent root = loader.load();
 
+         FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
+            fadeTransition.setFromValue(0.0);
+            fadeTransition.setToValue(1.0);
+            fadeTransition.play();
+
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -236,6 +243,11 @@ public class ProfileController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/About.fxml"));
         Parent root = loader.load();
+
+         FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
+            fadeTransition.setFromValue(0.0);
+            fadeTransition.setToValue(1.0);
+            fadeTransition.play();
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -254,6 +266,11 @@ public class ProfileController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ShopProducts.fxml"));
         Parent root = loader.load();
 
+         FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
+            fadeTransition.setFromValue(0.0);
+            fadeTransition.setToValue(1.0);
+            fadeTransition.play();
+
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -267,6 +284,11 @@ public class ProfileController {
           FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/Webview.fxml"));
           Parent root = loader.load();
           blogController = loader.getController();
+
+           FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
+            fadeTransition.setFromValue(0.0);
+            fadeTransition.setToValue(1.0);
+            fadeTransition.play();
 
           Scene scene = new Scene(root);
           stage.setScene(scene);
@@ -284,6 +306,11 @@ public class ProfileController {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/Signin.fxml"));
             Parent root = loader.load();
+
+            FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
+            fadeTransition.setFromValue(0.0);
+            fadeTransition.setToValue(1.0);
+            fadeTransition.play();
 
             Scene scene = new Scene(root);
             stage.setScene(scene);

@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="786.05" prefWidth="1397.42" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeImageSlideController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="786.05" prefWidth="1397.42" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeImageSlideController">
    <children>
       <ImageView fitHeight="140.97" fitWidth="138.29" layoutX="65.5">
          <image>
@@ -86,9 +86,9 @@
             </DropShadow>
          </effect>
       </Text>
-      <ImageView fitHeight="82.0" fitWidth="76.0" layoutX="60.0" layoutY="164.0">
+      <ImageView fitHeight="82.0" fitWidth="76.0" layoutX="74.0" layoutY="153.0">
          <image>
-            <Image url="@../Images/splash.png" />
+            <Image url="@../Images/splashhh.gif" />
          </image>
       </ImageView>
       <ImageView fitHeight="60.0" fitWidth="197.0" layoutX="640.0" layoutY="325.0">
@@ -96,7 +96,7 @@
             <Image url="@../Images/button%20sign.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="184.0" fitWidth="164.0" layoutX="658.0" layoutY="201.0">
+      <ImageView fx:id="imageView" fitHeight="184.0" fitWidth="164.0" layoutX="658.0" layoutY="200.0" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited">
          <image>
             <Image url="@../Images/doggg.png" />
          </image>

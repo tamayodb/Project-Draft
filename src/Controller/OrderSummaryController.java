@@ -4,9 +4,9 @@
     import java.net.URL;
     import java.util.Random;
     import java.util.ResourceBundle;
-    
 
-    import javafx.event.ActionEvent;
+import javafx.animation.FadeTransition;
+import javafx.event.ActionEvent;
     import javafx.fxml.FXML;
     import javafx.fxml.FXMLLoader;
     import javafx.fxml.Initializable;
@@ -22,6 +22,11 @@
     import javafx.scene.layout.Pane;
     import javafx.scene.layout.VBox;
     import javafx.stage.Stage;
+import javafx.util.Duration;
+
+import java.time.LocalDate;
+    import java.time.LocalTime;
+    import java.time.format.DateTimeFormatter;
 
     public class OrderSummaryController implements Initializable {
         
@@ -42,6 +47,12 @@
 
         @FXML
         Button gotoHome, showTeam, emailreceipt;
+
+        @FXML
+        Label ordertime;
+
+        @FXML
+        Label orderdate;
 
         @FXML
         TextField emailTF;
@@ -181,6 +192,15 @@
             String randomOrderID = generateRandomOrderID();
             orderID.setText(randomOrderID);
 
+            LocalDate currentDate = LocalDate.now();
+            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("MMMM d, yyyy");
+            orderdate.setText(currentDate.format(dateFormatter));
+
+        
+            LocalTime currentTime = LocalTime.now();
+            DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("h:mm a");
+            ordertime.setText(currentTime.format(timeFormatter));
+
         }
 
         public void addItem(Pane pane) {
@@ -243,6 +263,11 @@
             Parent root = loader.load();
             teamController = loader.getController();
 
+            FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1), root);
+            fadeTransition.setFromValue(0.0);
+            fadeTransition.setToValue(1.0);
+            fadeTransition.play();
+
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
@@ -255,12 +280,17 @@
 
              EmailReceiptController emailReceiptController = loader.getController();
                 
+                
                 emailReceiptController.setUserEmail(customeremail.getText());
                 emailReceiptController.setOrderID(orderID.getText());
                 emailReceiptController.setOrderTotal(paytotal1.getText());
                 emailReceiptController.setShippingDetails(customername.getText(), customernumber.getText(), customerstreetaddress.getText(), customerdistrict.getText(), customerzipcode.getText());
                 emailReceiptController.setDearName(customername.getText());
                 emailReceiptController.setCardDetails(cardnameLabel.getText(), cardnumberLabel.getText());
+            
+                String orderDate = orderdate.getText();
+                String orderTime = ordertime.getText();
+                emailReceiptController.setOrderDetails(orderDate, orderTime);
 
 
             Scene scene = new Scene(root);

@@ -23,8 +23,6 @@ import javafx.stage.Stage;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.layout.VBox;
 import javafx.scene.Node;
 import javafx.fxml.Initializable;
 
@@ -32,6 +30,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 
 
 
@@ -235,7 +237,7 @@ public class ShopController implements Initializable{
     public void gotoDogCategory(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/View/ShopDog.fxml")); 
         Stage newStage = new Stage();
-        
+
         Scene scene = new Scene(root);
         newStage.setScene(scene);
         newStage.show();
@@ -279,7 +281,7 @@ public class ShopController implements Initializable{
     public void gotoDogProd2(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/View/DogProduct2.fxml")); 
         Stage newStage = new Stage();
-        
+
         Scene scene = new Scene(root);
         newStage.setScene(scene);
         newStage.show();
@@ -301,7 +303,8 @@ public class ShopController implements Initializable{
     public void gotoCatProd1(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/View/CatProduct1.fxml")); 
         Stage newStage = new Stage();
-        
+
+    
         Scene scene = new Scene(root);
         newStage.setScene(scene);
         newStage.show();
@@ -323,6 +326,7 @@ public class ShopController implements Initializable{
     public void gotoCatProd3(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/View/CatProduct3.fxml")); 
         Stage newStage = new Stage();
+
         
         Scene scene = new Scene(root);
         newStage.setScene(scene);
@@ -345,7 +349,8 @@ public class ShopController implements Initializable{
     public void gotoSmallPetProd2(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/View/SmallProduct2.fxml")); 
         Stage newStage = new Stage();
-        
+
+
         Scene scene = new Scene(root);
         newStage.setScene(scene);
         newStage.show();
@@ -356,7 +361,8 @@ public class ShopController implements Initializable{
     public void gotoSmallPetProd3(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/View/SmallProduct3.fxml")); 
         Stage newStage = new Stage();
-        
+
+
         Scene scene = new Scene(root);
         newStage.setScene(scene);
         newStage.show();
@@ -398,5 +404,7 @@ public class ShopController implements Initializable{
         }
         return false;
     }
+
+
 
 }
