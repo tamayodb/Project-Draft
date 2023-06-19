@@ -1,6 +1,8 @@
 package Controller;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -22,6 +24,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.AudioClip;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -43,13 +46,7 @@ public class ProfileController {
     Button nextimage;
 
     @FXML
-    TextField usernameTF, nameTF, emailTF, numberTF;
-
-    @FXML
-    RadioButton maleRadioButton, femaleRadioButton, otherRadioButton;
-
-    @FXML
-    Label radioValidationLabel, dateValidationLabel; 
+    ShopController shopController = null;
 
     @FXML
     private ComboBox<String> monthComboBox;
@@ -73,23 +70,6 @@ public class ProfileController {
             User user = userList.get(0); 
             updateLabels(user);
         }
-
-        String[] months = {
-            "January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-        };
-
-        monthComboBox.getItems().addAll(months);
-
-        int currentYear = LocalDate.now().getYear();
-        for (int i = currentYear - 50; i <= currentYear; i++) {
-            yearComboBox.getItems().add(i);
-        }
-
-        int daysInMonth = LocalDate.now().lengthOfMonth();
-        for (int i = 1; i <= daysInMonth; i++) {
-            dayComboBox.getItems().add(i);
-        }
     }
 
     private void updateLabels(User user) {
@@ -97,88 +77,6 @@ public class ProfileController {
         emailLabel.setText(user.getEmail());
         numberLabel.setText(user.getNumber());
         nameLabel.setText(user.getName());
-    }
-
-   @FXML
-    private void handleMaleRadioButton(ActionEvent event) {
-        boolean selected = maleRadioButton.isSelected();
-        femaleRadioButton.setDisable(selected);
-        otherRadioButton.setDisable(selected);
-    }
-
-    @FXML
-    private void handleFemaleRadioButton(ActionEvent event) {
-        boolean selected = femaleRadioButton.isSelected();
-        maleRadioButton.setDisable(selected);
-        otherRadioButton.setDisable(selected);
-    }
-
-    @FXML
-    private void handleOtherRadioButton(ActionEvent event) {
-        boolean selected = otherRadioButton.isSelected();
-        maleRadioButton.setDisable(selected);
-        femaleRadioButton.setDisable(selected);
-    }
-
-    private boolean isSaved = false;
-
-    @FXML
-    private void handleEditButton(ActionEvent event) {
-        if (isSaved) {
-            // Enable the buttons and fields
-            nextimage.setDisable(false);
-            maleRadioButton.setDisable(false);
-            femaleRadioButton.setDisable(false);
-            otherRadioButton.setDisable(false);
-            monthComboBox.setDisable(false);
-            dayComboBox.setDisable(false);
-            yearComboBox.setDisable(false);
-        } else {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Save Required");
-            alert.setContentText("Please save your changes before editing.");
-            alert.showAndWait();
-        }
-    }
-
-
-    @FXML
-    private void handleSaveButton(ActionEvent event) {
-        
-        boolean isValid = true;
-
-        boolean isRadioButtonSelected = maleRadioButton.isSelected()
-                || femaleRadioButton.isSelected()
-                || otherRadioButton.isSelected();
-        if (!isRadioButtonSelected) {
-            isValid = false;
-            radioValidationLabel.setText("Please select one.");
-        } else {
-            radioValidationLabel.setText("");
-        }
-
-        boolean isMonthSelected = monthComboBox.getSelectionModel().getSelectedItem() != null;
-        boolean isDaySelected = dayComboBox.getSelectionModel().getSelectedItem() != null;
-        boolean isYearSelected = yearComboBox.getSelectionModel().getSelectedItem() != null;
-        if (!isMonthSelected || !isDaySelected || !isYearSelected) {
-            isValid = false;
-            dateValidationLabel.setText("Please select date of birth.");
-        } else {
-            dateValidationLabel.setText("");
-        }
-
-        if (isValid) {
-
-            nextimage.setDisable(true);
-            maleRadioButton.setDisable(true);
-            femaleRadioButton.setDisable(true);
-            otherRadioButton.setDisable(true);
-            monthComboBox.setDisable(true);
-            dayComboBox.setDisable(true);
-            yearComboBox.setDisable(true);
-
-            isSaved = true;
-        }
     }
 
 
@@ -240,22 +138,40 @@ public class ProfileController {
         alert.setHeaderText(null);
         alert.setContentText("Are you sure you want to proceed? There is no going back!");
 
+
+        Image icon = new Image(getClass().getResourceAsStream("/Images/cart.png"));
+        ImageView iconView = new ImageView(icon);
+        iconView.setFitWidth(50);
+        iconView.setFitHeight(50);
+        alert.setGraphic(iconView);
+
+        try {
+            File soundFile = new File("src/Images/bark.mp3");
+            String soundUrl = soundFile.toURI().toURL().toString();
+            AudioClip sound = new AudioClip(soundUrl);
+            sound.play();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
-
+            
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ShopProducts.fxml"));
-        Parent root = loader.load();
+           FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/ShopProducts.fxml"));
+           Parent root = loader.load();
+           shopController = loader.getController();
 
-         FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
+            FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
             fadeTransition.setFromValue(0.0);
             fadeTransition.setToValue(1.0);
             fadeTransition.play();
 
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-
+           Scene scene = new Scene(root);
+           stage.setScene(scene);
+           stage.show();
+        
         }
     }
 

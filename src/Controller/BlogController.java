@@ -1,6 +1,9 @@
 package Controller;
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import javafx.animation.FadeTransition;
@@ -15,6 +18,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.media.AudioClip;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebHistory;
 import javafx.scene.web.WebView;
@@ -22,6 +28,9 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class BlogController implements Initializable{
+
+    @FXML
+    ShopController shopController = null;
 
 	@FXML
 	private WebView webView;
@@ -66,27 +75,48 @@ public class BlogController implements Initializable{
     }
     @FXML
     public void gotoShop(ActionEvent event) throws IOException {
-        Alert confirmation = new Alert(AlertType.CONFIRMATION);
-        confirmation.setTitle("Confirmation");
-        confirmation.setHeaderText(null);
-        confirmation.setContentText("Are you sure you want to proceed? There is no going back!");
-        confirmation.showAndWait();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText(null);
+        alert.setContentText("Are you sure you want to proceed? There is no going back!");
 
-        if (confirmation.getResult() == ButtonType.OK) {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/ShopProducts.fxml"));
-        Parent root = loader.load();
+
+        Image icon = new Image(getClass().getResourceAsStream("/Images/cart.png"));
+        ImageView iconView = new ImageView(icon);
+        iconView.setFitWidth(50);
+        iconView.setFitHeight(50);
+        alert.setGraphic(iconView);
+
+        try {
+            File soundFile = new File("src/Images/bark.mp3");
+            String soundUrl = soundFile.toURI().toURL().toString();
+            AudioClip sound = new AudioClip(soundUrl);
+            sound.play();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
         
-         FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+           FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/ShopProducts.fxml"));
+           Parent root = loader.load();
+           shopController = loader.getController();
+
+            FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
             fadeTransition.setFromValue(0.0);
             fadeTransition.setToValue(1.0);
             fadeTransition.play();
 
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+           Scene scene = new Scene(root);
+           stage.setScene(scene);
+           stage.show();
+        
+        }
     }
-}
+
 
     
     @FXML

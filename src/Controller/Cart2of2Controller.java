@@ -1,6 +1,8 @@
 package Controller;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.Optional;
@@ -19,8 +21,11 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
 
 public class Cart2of2Controller implements Initializable {
@@ -265,8 +270,23 @@ public class Cart2of2Controller implements Initializable {
         if (validationsPassed) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Confirmation");
-            alert.setHeaderText("You will be paying for your purchase.");
-            alert.setContentText("Are you sure you want to proceed?");
+            alert.setHeaderText(null);
+            alert.setContentText("You will be paying for your purchase. Are you sure you want to proceed?");
+
+            Image icon = new Image(getClass().getResourceAsStream("/Images/wallet2.png"));
+            ImageView iconView = new ImageView(icon);
+            iconView.setFitWidth(50);
+            iconView.setFitHeight(50);
+            alert.setGraphic(iconView);
+
+            try {
+                File soundFile = new File("src/Images/bark.mp3");
+                String soundUrl = soundFile.toURI().toURL().toString();
+                AudioClip sound = new AudioClip(soundUrl);
+                sound.play();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
 
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -314,7 +334,5 @@ public class Cart2of2Controller implements Initializable {
             stage.show();
         }
     }
-
-
     
 }

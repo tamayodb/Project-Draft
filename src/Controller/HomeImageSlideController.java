@@ -20,7 +20,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
@@ -148,7 +150,13 @@ public class HomeImageSlideController implements Initializable {
         alert.setHeaderText(null);
         alert.setContentText("Are you sure you want to proceed? There is no going back!");
 
-        
+
+        Image icon = new Image(getClass().getResourceAsStream("/Images/cart.png"));
+        ImageView iconView = new ImageView(icon);
+        iconView.setFitWidth(50);
+        iconView.setFitHeight(50);
+        alert.setGraphic(iconView);
+
         try {
             File soundFile = new File("src/Images/bark.mp3");
             String soundUrl = soundFile.toURI().toURL().toString();

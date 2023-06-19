@@ -1,6 +1,8 @@
 package Controller;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -28,8 +30,10 @@ import javafx.fxml.Initializable;
 
 
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.AudioClip;
 
 
 
@@ -163,11 +167,18 @@ public class ShopController implements Initializable{
 
     public void buy(ActionEvent event) throws IOException {
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Add to Cart");
-        alert.setHeaderText(null);
-        alert.setContentText("Item successfully added to cart, thank you!");
-        alert.showAndWait();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Add to Cart");
+            alert.setHeaderText(null);
+            alert.setContentText("Item successfully added to cart, thank you!");
+
+            Image icon = new Image(getClass().getResourceAsStream("/Images/added.png"));
+            ImageView iconView = new ImageView(icon);
+            iconView.setFitWidth(50);
+            iconView.setFitHeight(50);
+            alert.setGraphic(iconView);
+
+            alert.showAndWait();
 
         Button sourceButton = (Button) event.getSource();
 
@@ -373,6 +384,22 @@ public class ShopController implements Initializable{
         alert.setTitle("Empty Cart");
         alert.setHeaderText(null);
         alert.setContentText("You have no items in your cart.");
+
+        Image icon = new Image(getClass().getResourceAsStream("/Images/noitem.png"));
+        ImageView iconView = new ImageView(icon);
+        iconView.setFitWidth(50);
+        iconView.setFitHeight(50);
+        alert.setGraphic(iconView);
+
+        try {
+            File soundFile = new File("src/Images/bark.mp3");
+            String soundUrl = soundFile.toURI().toURL().toString();
+            AudioClip sound = new AudioClip(soundUrl);
+            sound.play();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
         alert.showAndWait();
         return;
     }
@@ -381,6 +408,21 @@ public class ShopController implements Initializable{
         alert.setTitle("Confirmation");
         alert.setHeaderText(null);
         alert.setContentText("Are you sure you want to go to Cart? There is no going back!");
+
+        Image icon = new Image(getClass().getResourceAsStream("/Images/cart.png"));
+        ImageView iconView = new ImageView(icon);
+        iconView.setFitWidth(50);
+        iconView.setFitHeight(50);
+        alert.setGraphic(iconView);
+
+        try {
+            File soundFile = new File("src/Images/bark.mp3");
+            String soundUrl = soundFile.toURI().toURL().toString();
+            AudioClip sound = new AudioClip(soundUrl);
+            sound.play();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -401,7 +443,4 @@ public class ShopController implements Initializable{
         }
         return false;
     }
-
-
-
 }

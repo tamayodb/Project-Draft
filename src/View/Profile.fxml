@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -51,69 +49,39 @@
             <Font size="9.0" />
          </font>
       </Label>
-      <Label layoutX="184.0" layoutY="205.0" text="My Profile" textFill="#1b0e70">
+      <Label layoutX="190.0" layoutY="206.0" prefHeight="61.0" prefWidth="187.0" text="My Profile" textFill="#1b0e70">
          <font>
             <Font name="Arial Black" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="186.0" layoutY="247.0" text="Manage and Protect your Account" textFill="#1b0e70">
-         <font>
-            <Font name="Arial" size="19.0" />
-         </font>
-      </Label>
       <Line endX="931.02001953125" endY="3.0517578125E-5" layoutX="289.0" layoutY="281.0" startX="-100.0" stroke="#1b0e70" />
-      <Label layoutX="248.0" layoutY="318.0" text="Username" textFill="#1b0e70">
+      <Label layoutX="243.0" layoutY="360.0" text="Username" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="284.0" layoutY="372.0" text="Name" textFill="#1b0e70">
+      <Label layoutX="279.0" layoutY="414.0" text="Name" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="281.0" layoutY="422.0" text="E-mail" textFill="#1b0e70">
+      <Label layoutX="276.0" layoutY="464.0" text="E-mail" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="209.0" layoutY="474.0" prefHeight="22.0" prefWidth="128.0" text="Phone Number" textFill="#1b0e70">
+      <Label layoutX="204.0" layoutY="516.0" prefHeight="22.0" prefWidth="128.0" text="Phone Number" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="274.0" layoutY="525.0" prefHeight="22.0" prefWidth="71.0" text="Gender" textFill="#1b0e70">
-         <font>
-            <Font name="Arial" size="19.0" />
-         </font>
-      </Label>
-      <RadioButton fx:id="maleRadioButton" layoutX="352.0" layoutY="521.0" mnemonicParsing="false" onAction="#handleMaleRadioButton" text="Male" textFill="#1b0e70">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </RadioButton>
-      <RadioButton fx:id="femaleRadioButton" layoutX="446.0" layoutY="521.0" mnemonicParsing="false" onAction="#handleFemaleRadioButton" text="Female" textFill="#1b0e70">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </RadioButton>
-      <RadioButton fx:id="otherRadioButton" layoutX="567.0" layoutY="521.0" mnemonicParsing="false" onAction="#handleOtherRadioButton" text="Other" textFill="#1b0e70">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </RadioButton>
-      <Label layoutX="231.0" layoutY="573.0" prefHeight="22.0" prefWidth="107.0" text="Date of birth" textFill="#1b0e70">
-         <font>
-            <Font name="Arial" size="19.0" />
-         </font>
-      </Label>
-      <Line endX="-100.0" endY="262.0" layoutX="950.0" layoutY="318.0" startX="-100.0" stroke="#1b0e70" />
-      <ImageView accessibleRole="BUTTON" fitHeight="33.0" fitWidth="146.0" layoutX="960.0" layoutY="318.0">
+      <Line endX="-100.0" endY="262.0" layoutX="901.0" layoutY="318.0" startX="-100.0" stroke="#1b0e70" />
+      <ImageView accessibleRole="BUTTON" fitHeight="33.0" fitWidth="146.0" layoutX="921.0" layoutY="318.0">
          <image>
             <Image url="@../Images/button%20sign.png" />
          </image>
       </ImageView>
-      <Label layoutX="973.0" layoutY="325.0" text="Select your Avatar" textFill="WHITE">
+      <Label layoutX="935.0" layoutY="325.0" text="Select your Avatar" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
@@ -139,7 +107,7 @@
          </font>
       </Button>
       <Button layoutX="1294.0" layoutY="50.0" mnemonicParsing="false" onAction="#gotoLogin" opacity="0.0" prefHeight="30.0" prefWidth="33.0" text="Signout" />
-      <StackPane fx:id="stackPane" layoutX="921.0" layoutY="325.0" prefHeight="227.0" prefWidth="229.0">
+      <StackPane fx:id="stackPane" layoutX="882.0" layoutY="325.0" prefHeight="227.0" prefWidth="229.0">
          <children>
             <ImageView fitHeight="280.0" fitWidth="198.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
@@ -163,42 +131,27 @@
             </ImageView>
          </children>
       </StackPane>
-      <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="1181.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+      <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="1147.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
          <image>
             <Image url="@../Images/backbutton.png" />
          </image>
       </ImageView>
-      <Button fx:id="nextimage" layoutX="1178.0" layoutY="439.0" mnemonicParsing="false" onAction="#nextimage" opacity="0.0" prefHeight="42.0" prefWidth="36.0" text="nextimage" />
-      <ComboBox fx:id="dayComboBox" layoutX="350.0" layoutY="572.0" prefHeight="24.0" prefWidth="71.0" promptText="Day" style="-fx-background-color: DDE6ED;" visibleRowCount="5" />
-      <ComboBox fx:id="monthComboBox" layoutX="446.0" layoutY="572.0" prefHeight="24.0" prefWidth="107.0" promptText="Month" style="-fx-background-color: DDE6ED;" visibleRowCount="5" />
-      <ComboBox fx:id="yearComboBox" layoutX="570.0" layoutY="572.0" prefHeight="24.0" prefWidth="79.0" promptText="Year" style="-fx-background-color: DDE6ED;" visibleRowCount="5" />
-      <Label fx:id="radioValidationLabel" layoutX="350.0" layoutY="547.0" prefHeight="17.0" prefWidth="185.0" textFill="#1b0e70" />
-      <Label fx:id="dateValidationLabel" layoutX="350.0" layoutY="603.0" prefHeight="17.0" prefWidth="185.0" textFill="#1b0e70" />
-      <Label fx:id="usernameLabel" layoutX="356.0" layoutY="318.0" text="Label" textFill="#1b0e70">
+      <Button fx:id="nextimage" layoutX="1145.0" layoutY="439.0" mnemonicParsing="false" onAction="#nextimage" opacity="0.0" prefHeight="42.0" prefWidth="36.0" text="nextimage" />
+      <Label fx:id="usernameLabel" layoutX="351.0" layoutY="360.0" text="Label" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font></Label>
-      <Label fx:id="nameLabel" layoutX="356.0" layoutY="372.0" text="Label" textFill="#1b0e70">
+      <Label fx:id="nameLabel" layoutX="351.0" layoutY="414.0" text="Label" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font></Label>
-      <Label fx:id="emailLabel" layoutX="356.0" layoutY="422.0" text="Label" textFill="#1b0e70">
+      <Label fx:id="emailLabel" layoutX="351.0" layoutY="464.0" text="Label" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font></Label>
-      <Label fx:id="numberLabel" layoutX="356.0" layoutY="474.0" text="Label" textFill="#1b0e70">
+      <Label fx:id="numberLabel" layoutX="351.0" layoutY="516.0" text="Label" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font></Label>
-      <Button layoutX="1090.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleSaveButton" style="-fx-background-color: #1b0e70;" text=" Save " textFill="WHITE">
-         <font>
-            <Font name="Arial" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="1170.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleEditButton" style="-fx-background-color: #1b0e70;" text=" Edit " textFill="WHITE">
-         <font>
-            <Font name="Arial" size="18.0" />
-         </font>
-      </Button>
    </children>
 </Pane>
