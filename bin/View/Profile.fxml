@@ -4,7 +4,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -173,41 +172,33 @@
       <ComboBox fx:id="dayComboBox" layoutX="350.0" layoutY="572.0" prefHeight="24.0" prefWidth="71.0" promptText="Day" style="-fx-background-color: DDE6ED;" visibleRowCount="5" />
       <ComboBox fx:id="monthComboBox" layoutX="446.0" layoutY="572.0" prefHeight="24.0" prefWidth="107.0" promptText="Month" style="-fx-background-color: DDE6ED;" visibleRowCount="5" />
       <ComboBox fx:id="yearComboBox" layoutX="570.0" layoutY="572.0" prefHeight="24.0" prefWidth="79.0" promptText="Year" style="-fx-background-color: DDE6ED;" visibleRowCount="5" />
-      <TextField fx:id="usernameTF" layoutX="350.0" layoutY="316.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="155.0" style="-fx-background-color: DDE6ED;">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="nameTF" layoutX="350.0" layoutY="371.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="155.0" style="-fx-background-color: DDE6ED;">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="emailTF" layoutX="350.0" layoutY="420.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="155.0" style="-fx-background-color: DDE6ED;">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="numberTF" layoutX="350.0" layoutY="472.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="155.0" style="-fx-background-color: DDE6ED;">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </TextField>
-      <Button fx:id="save" layoutX="1094.0" layoutY="241.0" mnemonicParsing="false" onAction="#handleSaveButton" style="-fx-background-color: #1b0e70;" text="Save" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="Arial" size="18.0" />
-         </font>
-      </Button>
-      <Button fx:id="edit" layoutX="1168.0" layoutY="241.0" mnemonicParsing="false" onAction="#handleEditButton" style="-fx-background-color: #1b0e70;" text="Edit" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="Arial" size="18.0" />
-         </font>
-      </Button>
-      <Label fx:id="usernameValidationLabel" layoutX="351.0" layoutY="346.0" prefHeight="17.0" prefWidth="320.0" textFill="#1b0e70" />
-      <Label fx:id="nameValidationLabel" layoutX="350.0" layoutY="400.0" prefHeight="17.0" prefWidth="235.0" textFill="#1b0e70" />
-      <Label fx:id="emailValidationLabel" layoutX="350.0" layoutY="450.0" prefHeight="17.0" prefWidth="235.0" textFill="#1b0e70" />
-      <Label fx:id="numberValidationLabel" layoutX="350.0" layoutY="502.0" prefHeight="17.0" prefWidth="235.0" textFill="#1b0e70" />
       <Label fx:id="radioValidationLabel" layoutX="350.0" layoutY="547.0" prefHeight="17.0" prefWidth="185.0" textFill="#1b0e70" />
       <Label fx:id="dateValidationLabel" layoutX="350.0" layoutY="603.0" prefHeight="17.0" prefWidth="185.0" textFill="#1b0e70" />
+      <Label fx:id="usernameLabel" layoutX="356.0" layoutY="318.0" text="Label" textFill="#1b0e70">
+         <font>
+            <Font name="Arial" size="19.0" />
+         </font></Label>
+      <Label fx:id="nameLabel" layoutX="356.0" layoutY="372.0" text="Label" textFill="#1b0e70">
+         <font>
+            <Font name="Arial" size="19.0" />
+         </font></Label>
+      <Label fx:id="emailLabel" layoutX="356.0" layoutY="422.0" text="Label" textFill="#1b0e70">
+         <font>
+            <Font name="Arial" size="19.0" />
+         </font></Label>
+      <Label fx:id="numberLabel" layoutX="356.0" layoutY="474.0" text="Label" textFill="#1b0e70">
+         <font>
+            <Font name="Arial" size="19.0" />
+         </font></Label>
+      <Button layoutX="1090.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleSaveButton" style="-fx-background-color: #1b0e70;" text=" Save " textFill="WHITE">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="1170.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleEditButton" style="-fx-background-color: #1b0e70;" text=" Edit " textFill="WHITE">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

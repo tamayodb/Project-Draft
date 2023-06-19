@@ -36,27 +36,24 @@ public class SigninController {
     HomeImageSlideController homeImageSlideController = null;
 
 
-    private String signupUsername;
-    private String signupPassword;
+   static User signupUser;
 
-    public void setUsernameAndPassword(String username, String password) {
-        signupUsername = username;
-        signupPassword = password;
+    public static void setSignupUser(User user) {
+        signupUser = user;
     }
 
     public void signin(ActionEvent event) throws IOException {
-
         String username = mytextfield.getText();
         String password = mypasswordfield.getText();
 
-       if (username.equals(signupUsername) && password.equals(signupPassword)) {
+        if (signupUser != null && username.equals(signupUser.getUsername()) && password.equals(signupUser.getPassword())) {
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/Home.fxml"));
             Parent root = loader.load();
             homeImageSlideController = loader.getController();
 
-             FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
+            FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
             fadeTransition.setFromValue(0.0);
             fadeTransition.setToValue(1.0);
             fadeTransition.play();

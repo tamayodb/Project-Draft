@@ -23,7 +23,7 @@ import javafx.util.Duration;
 public class SignupController {
 
     @FXML
-    private TextField usernameTF, numberTF, emailTF;
+    private TextField usernameTF, numberTF, emailTF, nameTF;
 
     @FXML
     private PasswordField passwordPF;
@@ -34,15 +34,27 @@ public class SignupController {
     @FXML
     private Label mywarninglabel1, mywarninglabel2, mywarninglabel3, mywarninglabel4;
 
+    private UserRepository userRepository;
+
+
+    Parent root;
+
+    FXMLLoader loader;
+
     @FXML
-    private SigninController signinController = null;
+    SigninController signinController = null;
+    
+    public void initialize() {
+        userRepository = UserRepository.getInstance();
+    }
 
     public void signup(ActionEvent event) throws IOException {
         String username = usernameTF.getText();
         String number = numberTF.getText();
         String email = emailTF.getText();
         String password = passwordPF.getText();
-
+        String name = nameTF.getText();
+        
         boolean validationsPassed = true;
 
         if (!isValidUsername(username)) {
@@ -83,7 +95,8 @@ public class SignupController {
             Parent root = loader.load();
             signinController = loader.getController();
 
-            signinController.setUsernameAndPassword(username, password);
+            User newUser = new User(username, email, number, name, password);
+            signinController.setSignupUser(newUser);
 
             FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
             fadeTransition.setFromValue(0.0);
@@ -94,7 +107,11 @@ public class SignupController {
             stage.setScene(scene);
             stage.show();
         }
-    }
+
+        User user = new User(username, email, number, name, password);
+        userRepository.addUser(user);
+
+    }   
 
     private boolean isValidUsername(String username) {
         Pattern pattern = Pattern.compile("^(?=.*[a-zA-Z])(?=.*\\d).+$");

@@ -2,6 +2,7 @@ package Controller;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Optional;
 
 import javafx.animation.FadeTransition;
@@ -14,7 +15,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -34,6 +34,9 @@ public class ProfileController {
     StackPane stackPane;
 
     @FXML
+    Label usernameLabel, nameLabel, emailLabel, numberLabel;
+
+    @FXML
     Button save, edit;
 
     @FXML
@@ -46,7 +49,7 @@ public class ProfileController {
     RadioButton maleRadioButton, femaleRadioButton, otherRadioButton;
 
     @FXML
-    Label usernameValidationLabel, nameValidationLabel, emailValidationLabel, numberValidationLabel, radioValidationLabel, dateValidationLabel; 
+    Label radioValidationLabel, dateValidationLabel; 
 
     @FXML
     private ComboBox<String> monthComboBox;
@@ -59,7 +62,18 @@ public class ProfileController {
 
     BlogController blogController = null;
 
+    private UserRepository userRepository;
+
     public void initialize() {
+
+        userRepository = UserRepository.getInstance();
+        ArrayList<User> userList = userRepository.getUserList();
+
+        if (!userList.isEmpty()) {
+            User user = userList.get(0); 
+            updateLabels(user);
+        }
+
         String[] months = {
             "January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"
@@ -76,6 +90,13 @@ public class ProfileController {
         for (int i = 1; i <= daysInMonth; i++) {
             dayComboBox.getItems().add(i);
         }
+    }
+
+    private void updateLabels(User user) {
+        usernameLabel.setText(user.getUsername());
+        emailLabel.setText(user.getEmail());
+        numberLabel.setText(user.getNumber());
+        nameLabel.setText(user.getName());
     }
 
    @FXML
@@ -106,10 +127,6 @@ public class ProfileController {
         if (isSaved) {
             // Enable the buttons and fields
             nextimage.setDisable(false);
-            usernameTF.setDisable(false);
-            nameTF.setDisable(false);
-            emailTF.setDisable(false);
-            numberTF.setDisable(false);
             maleRadioButton.setDisable(false);
             femaleRadioButton.setDisable(false);
             otherRadioButton.setDisable(false);
@@ -129,38 +146,6 @@ public class ProfileController {
     private void handleSaveButton(ActionEvent event) {
         
         boolean isValid = true;
-
-        String username = usernameTF.getText().trim();
-        if (!username.matches("[a-zA-Z0-9]+")) {
-            isValid = false;
-            usernameValidationLabel.setText("Username must contain only letters and numbers.");
-        } else {
-            usernameValidationLabel.setText("");
-        }
-
-        String name = nameTF.getText().trim();
-        if (name.isEmpty()) {
-            isValid = false;
-            nameValidationLabel.setText("Name is required.");
-        } else {
-            nameValidationLabel.setText("");
-        }
-
-        String email = emailTF.getText().trim();
-        if (!email.endsWith("@gmail.com")) {
-            isValid = false;
-            emailValidationLabel.setText("Email must end with '@gmail.com'.");
-        } else {
-            emailValidationLabel.setText("");
-        }
-
-        String number = numberTF.getText().trim();
-        if (number.length() != 11 || !number.matches("[0-9]+")) {
-            isValid = false;
-            numberValidationLabel.setText("Number must be 11 digits.");
-        } else {
-            numberValidationLabel.setText("");
-        }
 
         boolean isRadioButtonSelected = maleRadioButton.isSelected()
                 || femaleRadioButton.isSelected()
@@ -185,10 +170,6 @@ public class ProfileController {
         if (isValid) {
 
             nextimage.setDisable(true);
-            usernameTF.setDisable(true);
-            nameTF.setDisable(true);
-            emailTF.setDisable(true);
-            numberTF.setDisable(true);
             maleRadioButton.setDisable(true);
             femaleRadioButton.setDisable(true);
             otherRadioButton.setDisable(true);
@@ -317,4 +298,20 @@ public class ProfileController {
             stage.show();
         }
     }
+
+    public void setProfileData(ArrayList<String> profileData) {
+    if (profileData.size() >= 4) {
+        String username = profileData.get(0);
+        String name = profileData.get(1);
+        String email = profileData.get(2);
+        String number = profileData.get(3);
+
+        usernameLabel.setText(username);
+        nameLabel.setText(name);
+        emailLabel.setText(email);
+        numberLabel.setText(number);
+    }
+}
+
+
 }
