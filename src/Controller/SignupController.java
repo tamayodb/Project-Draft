@@ -96,7 +96,12 @@ public class SignupController {
             signinController = loader.getController();
 
             User newUser = new User(username, email, number, name, password);
+            User user = new User(username, email, number, name, password);
+            userRepository.addUser(user);
+            
             signinController.setSignupUser(newUser);
+
+            
 
             FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1.5), root);
             fadeTransition.setFromValue(0.0);
@@ -108,8 +113,6 @@ public class SignupController {
             stage.show();
         }
 
-        User user = new User(username, email, number, name, password);
-        userRepository.addUser(user);
 
     }   
 

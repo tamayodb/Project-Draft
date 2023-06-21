@@ -25,7 +25,7 @@
             <Font name="SansSerif Bold" size="46.58" />
          </font>
       </Label>
-      <TextField fx:id="emailTF" layoutX="884.0" layoutY="397.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.67" prefWidth="311.51" promptText="E-mail">
+      <TextField fx:id="emailTF" layoutX="884.0" layoutY="397.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.67" prefWidth="311.51" promptText="E-mail" style="-fx-background-color: #ffffff;">
          <font>
             <Font name="SansSerif Bold" size="20.0" />
          </font>
@@ -34,7 +34,7 @@
          </effect>
       </TextField>
       <Line endX="667.5" endY="489.1000061035156" layoutX="480.0" layoutY="-54.0" startX="667.5" startY="459.0" stroke="#00000034" strokeWidth="1.5" />
-      <PasswordField fx:id="passwordPF" layoutX="884.0" layoutY="471.0" prefHeight="43.67" prefWidth="311.51" promptText="Password">
+      <PasswordField fx:id="passwordPF" layoutX="884.0" layoutY="471.0" prefHeight="43.67" prefWidth="311.51" promptText="Password" style="-fx-background-color: #ffffff;">
          <font>
             <Font name="SansSerif Bold" size="20.0" />
          </font>
@@ -58,7 +58,7 @@
          </image>
       </ImageView>
       <Line endX="667.5" endY="489.1000061035156" layoutX="480.0" layoutY="19.0" startX="667.5" startY="459.0" stroke="#00000034" strokeWidth="1.5" />
-      <TextField fx:id="nameTF" layoutX="884.0" layoutY="169.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.67" prefWidth="311.51" promptText="Name">
+      <TextField fx:id="nameTF" layoutX="884.0" layoutY="169.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.67" prefWidth="311.51" promptText="Name" style="-fx-background-color: #ffffff;">
          <font>
             <Font name="SansSerif Bold" size="20.0" />
          </font>
@@ -67,7 +67,7 @@
          </effect>
       </TextField>
       <Line endX="667.5" endY="489.1000061035156" layoutX="480.0" layoutY="-283.0" startX="667.5" startY="459.0" stroke="#00000034" strokeWidth="1.5" />
-      <TextField fx:id="usernameTF" layoutX="883.0" layoutY="244.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.67" prefWidth="311.51" promptText="Username">
+      <TextField fx:id="usernameTF" layoutX="883.0" layoutY="244.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.67" prefWidth="311.51" promptText="Username" style="-fx-background-color: #ffffff;">
          <font>
             <Font name="SansSerif Bold" size="20.0" />
          </font>
@@ -76,7 +76,7 @@
          </effect>
       </TextField>
       <Line endX="667.5" endY="489.1000061035156" layoutX="479.0" layoutY="-209.0" startX="667.5" startY="459.0" stroke="#00000034" strokeWidth="1.5" />
-      <TextField fx:id="numberTF" layoutX="883.0" layoutY="319.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.67" prefWidth="311.51" promptText="Contact Number">
+      <TextField fx:id="numberTF" layoutX="883.0" layoutY="319.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.67" prefWidth="311.51" promptText="Contact Number" style="-fx-background-color: #ffffff;">
          <font>
             <Font name="SansSerif Bold" size="20.0" />
          </font>

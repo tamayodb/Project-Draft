@@ -93,7 +93,7 @@
             <Font size="15.0" />
          </font>
       </TextField>
-      <ChoiceBox fx:id="districtchoices" layoutX="1065.0" layoutY="472.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="165.0" />
+      <ChoiceBox fx:id="districtchoices" layoutX="1065.0" layoutY="472.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: #ffffff;" />
       <TextField fx:id="zipTF" layoutX="922.0" layoutY="471.0" prefHeight="31.0" prefWidth="135.0" promptText="ZIP Code" styleClass="textbutton" stylesheets="@profiletextfield.css">
          <font>
             <Font size="15.0" />
@@ -172,7 +172,7 @@
                               <Font name="Arial" size="20.0" />
                            </font>
                         </Label>
-                        <ChoiceBox fx:id="choicebox1" layoutX="394.0" layoutY="19.0" prefHeight="36.0" prefWidth="101.0" />
+                        <ChoiceBox fx:id="choicebox1" layoutX="407.0" layoutY="19.0" prefHeight="36.0" prefWidth="78.0" style="-fx-background-color: #ffffff; -fx-border-color: #524992; -fx-border-radius: 10;" />
                         <Label fx:id="finalpricec1" layoutX="602.0" layoutY="25.0" text="349.0" textFill="#1b0e70">
                            <font>
                               <Font name="Arial" size="20.0" />
@@ -198,7 +198,7 @@
                               <Font name="Arial" size="20.0" />
                            </font>
                         </Label>
-                        <ChoiceBox fx:id="choicebox2" layoutX="394.0" layoutY="22.0" prefHeight="36.0" prefWidth="101.0" />
+                        <ChoiceBox fx:id="choicebox2" layoutX="407.0" layoutY="22.0" prefHeight="36.0" prefWidth="78.0" style="-fx-background-color: #ffffff; -fx-border-radius: 10; -fx-border-color: #524992;" />
                         <Label fx:id="finalpricec2" layoutX="602.0" layoutY="29.0" text="299.0" textFill="#1b0e70">
                            <font>
                               <Font name="Arial" size="20.0" />
@@ -224,7 +224,7 @@
                               <Font name="Arial" size="20.0" />
                            </font>
                         </Label>
-                        <ChoiceBox fx:id="choicebox3" layoutX="394.0" layoutY="27.0" prefHeight="36.0" prefWidth="101.0" />
+                        <ChoiceBox fx:id="choicebox3" layoutX="407.0" layoutY="27.0" prefHeight="36.0" prefWidth="78.0" style="-fx-background-color: #ffffff; -fx-border-color: #524992; -fx-border-radius: 10;" />
                         <Label fx:id="finalpricec3" layoutX="602.0" layoutY="35.0" text="100.0" textFill="#1b0e70">
                            <font>
                               <Font name="Arial" size="20.0" />
@@ -250,7 +250,7 @@
                               <Font name="Arial" size="20.0" />
                            </font>
                         </Label>
-                        <ChoiceBox fx:id="choicebox4" layoutX="394.0" layoutY="29.0" prefHeight="36.0" prefWidth="101.0" />
+                        <ChoiceBox fx:id="choicebox4" layoutX="407.0" layoutY="29.0" prefHeight="36.0" prefWidth="78.0" style="-fx-background-color: #ffffff; -fx-border-color: #524992; -fx-border-radius: 10;" />
                         <Label fx:id="finalpriced1" layoutX="602.0" layoutY="38.0" text="1518.0" textFill="#1b0e70">
                            <font>
                               <Font name="Arial" size="20.0" />
@@ -276,7 +276,7 @@
                               <Font name="Arial" size="20.0" />
                            </font>
                         </Label>
-                        <ChoiceBox fx:id="choicebox5" layoutX="394.0" layoutY="30.0" prefHeight="36.0" prefWidth="101.0" />
+                        <ChoiceBox fx:id="choicebox5" layoutX="407.0" layoutY="30.0" prefHeight="36.0" prefWidth="78.0" style="-fx-background-color: #ffffff; -fx-border-color: #524992; -fx-border-radius: 10;" />
                         <Label fx:id="finalpriced2" layoutX="602.0" layoutY="37.0" text="1200.0" textFill="#1b0e70">
                            <font>
                               <Font name="Arial" size="20.0" />
@@ -302,7 +302,7 @@
                               <Font name="Arial" size="20.0" />
                            </font>
                         </Label>
-                        <ChoiceBox fx:id="choicebox6" layoutX="392.0" layoutY="32.0" prefHeight="36.0" prefWidth="101.0" />
+                        <ChoiceBox fx:id="choicebox6" layoutX="407.0" layoutY="32.0" prefHeight="36.0" prefWidth="78.0" style="-fx-background-color: #ffffff; -fx-border-color: #524992; -fx-border-radius: 10;" />
                         <Label fx:id="finalpriced3" layoutX="602.0" layoutY="39.0" text="437.0" textFill="#1b0e70">
                            <font>
                               <Font name="Arial" size="20.0" />
@@ -328,7 +328,7 @@
                               <Font name="Arial" size="20.0" />
                            </font>
                         </Label>
-                        <ChoiceBox fx:id="choicebox7" layoutX="396.0" layoutY="30.0" prefHeight="36.0" prefWidth="101.0" />
+                        <ChoiceBox fx:id="choicebox7" layoutX="407.0" layoutY="30.0" prefHeight="36.0" prefWidth="78.0" style="-fx-background-color: #ffffff; -fx-border-color: #524992; -fx-border-radius: 10;" />
                         <Label fx:id="finalprices1" layoutX="602.0" layoutY="37.0" text="13859.0" textFill="#1b0e70">
                            <font>
                               <Font name="Arial" size="20.0" />
@@ -354,7 +354,7 @@
                               <Font name="Arial" size="20.0" />
                            </font>
                         </Label>
-                        <ChoiceBox fx:id="choicebox8" layoutX="393.0" layoutY="30.0" prefHeight="36.0" prefWidth="101.0" />
+                        <ChoiceBox fx:id="choicebox8" layoutX="407.0" layoutY="30.0" prefHeight="36.0" prefWidth="78.0" style="-fx-background-color: #ffffff; -fx-border-color: #524992; -fx-border-radius: 10;" />
                         <Label fx:id="finalprices2" layoutX="601.0" layoutY="36.0" text="1374.0" textFill="#1b0e70">
                            <font>
                               <Font name="Arial" size="20.0" />
@@ -380,7 +380,7 @@
                               <Font name="Arial" size="20.0" />
                            </font>
                         </Label>
-                        <ChoiceBox fx:id="choicebox9" layoutX="394.0" layoutY="31.0" prefHeight="36.0" prefWidth="101.0" />
+                        <ChoiceBox fx:id="choicebox9" layoutX="407.0" layoutY="31.0" prefHeight="36.0" prefWidth="78.0" style="-fx-background-color: #ffffff; -fx-border-color: #524992; -fx-border-radius: 10;" />
                         <Label fx:id="finalprices3" layoutX="600.0" layoutY="37.0" text="1294.0" textFill="#1b0e70">
                            <font>
                               <Font name="Arial" size="20.0" />

@@ -66,7 +66,7 @@
       <Button fx:id="cartbtn" layoutX="1247.0" layoutY="59.0" mnemonicParsing="false" onAction="#gotoCart" opacity="0.0" prefHeight="30.0" prefWidth="33.0" text="Cart" />
       <Pane layoutX="271.0" layoutY="201.0" prefHeight="164.0" prefWidth="341.0">
          <children>
-            <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#eedff8" height="150.0" layoutX="50.0" layoutY="16.0" stroke="#ffffff00" strokeLineCap="ROUND" strokeType="INSIDE" width="289.0">
+            <Rectangle arcHeight="35.0" arcWidth="35.0" fill="WHITE" height="150.0" layoutX="50.0" layoutY="16.0" stroke="#ffffff00" strokeLineCap="ROUND" strokeType="INSIDE" width="289.0">
                <effect>
                   <DropShadow offsetY="2.0" spread="0.11">
                      <color>
@@ -75,7 +75,7 @@
                   </DropShadow>
                </effect>
             </Rectangle>
-            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="134.0" layoutX="63.0" layoutY="24.0" stroke="WHITE" strokeLineCap="ROUND" strokeType="INSIDE" width="104.0">
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#eedff8" height="134.0" layoutX="63.0" layoutY="24.0" stroke="#eedff8" strokeLineCap="ROUND" strokeType="INSIDE" width="104.0">
                <effect>
                   <DropShadow height="16.32" offsetY="3.0" radius="6.49" spread="0.07" width="11.64">
                      <color>
@@ -152,7 +152,7 @@
       </Pane>
       <Pane layoutX="625.0" layoutY="200.0" prefHeight="200.0" prefWidth="348.0">
          <children>
-            <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#eedff8" height="150.0" layoutX="31.0" layoutY="17.0" stroke="#ffffff00" strokeLineCap="ROUND" strokeType="INSIDE" width="289.0">
+            <Rectangle arcHeight="35.0" arcWidth="35.0" fill="WHITE" height="150.0" layoutX="31.0" layoutY="17.0" stroke="#ffffff00" strokeLineCap="ROUND" strokeType="INSIDE" width="289.0">
                <effect>
                   <DropShadow offsetY="2.0" spread="0.11">
                      <color>
@@ -161,7 +161,7 @@
                   </DropShadow>
                </effect>
             </Rectangle>
-            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="134.0" layoutX="45.0" layoutY="24.0" stroke="WHITE" strokeLineCap="ROUND" strokeType="INSIDE" width="104.0">
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#eedff8" height="134.0" layoutX="45.0" layoutY="24.0" stroke="#eedff8" strokeLineCap="ROUND" strokeType="INSIDE" width="104.0">
                <effect>
                   <DropShadow height="16.32" offsetY="3.0" radius="6.49" spread="0.07" width="11.64">
                      <color>
@@ -243,7 +243,7 @@
       </Pane>
       <Pane layoutX="940.0" layoutY="201.0" prefHeight="200.0" prefWidth="348.0">
          <children>
-            <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#eedff8" height="150.0" layoutX="50.0" layoutY="17.0" stroke="#ffffff00" strokeLineCap="ROUND" strokeType="INSIDE" width="289.0">
+            <Rectangle arcHeight="35.0" arcWidth="35.0" fill="WHITE" height="150.0" layoutX="50.0" layoutY="17.0" stroke="#ffffff00" strokeLineCap="ROUND" strokeType="INSIDE" width="289.0">
                <effect>
                   <DropShadow offsetY="2.0" spread="0.11">
                      <color>
@@ -252,7 +252,7 @@
                   </DropShadow>
                </effect>
             </Rectangle>
-            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="134.0" layoutX="61.0" layoutY="24.0" stroke="WHITE" strokeLineCap="ROUND" strokeType="INSIDE" width="104.0">
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#eedff8" height="134.0" layoutX="61.0" layoutY="24.0" stroke="#eedff8" strokeLineCap="ROUND" strokeType="INSIDE" width="104.0">
                <effect>
                   <DropShadow height="16.32" offsetY="3.0" radius="6.49" spread="0.07" width="11.64">
                      <color>
@@ -329,7 +329,7 @@
       </Pane>
       <Pane layoutX="265.0" layoutY="374.0" prefHeight="178.0" prefWidth="331.0">
          <children>
-            <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#f4efb0" height="150.0" layoutX="58.0" layoutY="15.0" stroke="#ffffff00" strokeLineCap="ROUND" strokeType="INSIDE" width="289.0">
+            <Rectangle arcHeight="35.0" arcWidth="35.0" fill="WHITE" height="150.0" layoutX="58.0" layoutY="15.0" stroke="#ffffff00" strokeLineCap="ROUND" strokeType="INSIDE" width="289.0">
                <effect>
                   <DropShadow offsetY="2.0" spread="0.11">
                      <color>
@@ -338,7 +338,7 @@
                   </DropShadow>
                </effect>
             </Rectangle>
-            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="134.0" layoutX="69.0" layoutY="24.0" stroke="WHITE" strokeLineCap="ROUND" strokeType="INSIDE" width="104.0">
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#f4efb0" height="134.0" layoutX="69.0" layoutY="24.0" stroke="#f4efb0" strokeLineCap="ROUND" strokeType="INSIDE" width="104.0">
                <effect>
                   <DropShadow height="16.32" offsetY="3.0" radius="6.49" spread="0.07" width="11.64">
                      <color>
@@ -415,7 +415,7 @@
       </Pane>
       <Pane layoutX="625.0" layoutY="373.0" prefHeight="200.0" prefWidth="348.0">
          <children>
-            <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#f4efb0" height="150.0" layoutX="31.0" layoutY="17.0" stroke="#ffffff00" strokeLineCap="ROUND" strokeType="INSIDE" width="289.0">
+            <Rectangle arcHeight="35.0" arcWidth="35.0" fill="WHITE" height="150.0" layoutX="31.0" layoutY="17.0" stroke="#ffffff00" strokeLineCap="ROUND" strokeType="INSIDE" width="289.0">
                <effect>
                   <DropShadow offsetY="2.0" spread="0.11">
                      <color>
@@ -454,7 +454,7 @@
                   <Font name="Arial Black" size="12.0" />
                </font>
             </Label>
-            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="134.0" layoutX="46.0" layoutY="24.0" stroke="WHITE" strokeLineCap="ROUND" strokeType="INSIDE" width="104.0">
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#f4efb0" height="134.0" layoutX="46.0" layoutY="24.0" stroke="#f4efb0" strokeLineCap="ROUND" strokeType="INSIDE" width="104.0">
                <effect>
                   <DropShadow height="16.32" offsetY="3.0" radius="6.49" spread="0.07" width="11.64">
                      <color>
@@ -501,7 +501,7 @@
       </Pane>
       <Pane layoutX="937.0" layoutY="375.0" prefHeight="200.0" prefWidth="348.0">
          <children>
-            <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#f4efb0" height="150.0" layoutX="54.0" layoutY="17.0" stroke="#ffffff00" strokeLineCap="ROUND" strokeType="INSIDE" width="290.0">
+            <Rectangle arcHeight="35.0" arcWidth="35.0" fill="WHITE" height="150.0" layoutX="54.0" layoutY="17.0" stroke="#ffffff00" strokeLineCap="ROUND" strokeType="INSIDE" width="290.0">
                <effect>
                   <DropShadow offsetY="2.0" spread="0.11">
                      <color>
@@ -510,7 +510,7 @@
                   </DropShadow>
                </effect>
             </Rectangle>
-            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="134.0" layoutX="65.0" layoutY="24.0" stroke="WHITE" strokeLineCap="ROUND" strokeType="INSIDE" width="104.0">
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#f4efb0" height="134.0" layoutX="65.0" layoutY="24.0" stroke="#f4efb0" strokeLineCap="ROUND" strokeType="INSIDE" width="104.0">
                <effect>
                   <DropShadow height="16.32" offsetY="3.0" radius="6.49" spread="0.07" width="11.64">
                      <color>
@@ -587,7 +587,7 @@
       </Pane>
       <Pane layoutX="267.0" layoutY="546.0" prefHeight="200.0" prefWidth="341.0">
          <children>
-            <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#e4ade1" height="149.0" layoutX="54.0" layoutY="17.0" stroke="#ffffff00" strokeLineCap="ROUND" strokeType="INSIDE" width="289.0">
+            <Rectangle arcHeight="35.0" arcWidth="35.0" fill="WHITE" height="149.0" layoutX="54.0" layoutY="17.0" stroke="#ffffff00" strokeLineCap="ROUND" strokeType="INSIDE" width="289.0">
                <effect>
                   <DropShadow offsetY="2.0" spread="0.11">
                      <color>
@@ -596,7 +596,7 @@
                   </DropShadow>
                </effect>
             </Rectangle>
-            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="134.0" layoutX="66.0" layoutY="24.0" stroke="WHITE" strokeLineCap="ROUND" strokeType="INSIDE" width="107.0">
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#e4ade1" height="134.0" layoutX="66.0" layoutY="24.0" stroke="#e4ade1" strokeLineCap="ROUND" strokeType="INSIDE" width="107.0">
                <effect>
                   <DropShadow height="16.32" offsetY="3.0" radius="6.49" spread="0.07" width="11.64">
                      <color>
@@ -673,7 +673,7 @@
       </Pane>
       <Pane layoutX="626.0" layoutY="545.0" prefHeight="200.0" prefWidth="348.0">
          <children>
-            <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#e4ade1" height="150.0" layoutX="31.0" layoutY="17.0" stroke="#ffffff00" strokeLineCap="ROUND" strokeType="INSIDE" width="290.0">
+            <Rectangle arcHeight="35.0" arcWidth="35.0" fill="WHITE" height="150.0" layoutX="31.0" layoutY="17.0" stroke="#ffffff00" strokeLineCap="ROUND" strokeType="INSIDE" width="290.0">
                <effect>
                   <DropShadow offsetY="2.0" spread="0.11">
                      <color>
@@ -682,7 +682,7 @@
                   </DropShadow>
                </effect>
             </Rectangle>
-            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="134.0" layoutX="42.0" layoutY="24.0" stroke="WHITE" strokeLineCap="ROUND" strokeType="INSIDE" width="104.0">
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#e4ade1" height="134.0" layoutX="42.0" layoutY="24.0" stroke="#e4ade1" strokeLineCap="ROUND" strokeType="INSIDE" width="104.0">
                <effect>
                   <DropShadow height="16.32" offsetY="3.0" radius="6.49" spread="0.07" width="11.64">
                      <color>
@@ -754,12 +754,12 @@
                   <Font name="Arial Black" size="13.0" />
                </font>
             </Label>
-            <Button fx:id="addcartbtn8" layoutX="183.0" layoutY="109.0" mnemonicParsing="false" onAction="#buy" opacity="0.0" prefHeight="34.0" prefWidth="108.0" text="addToCart" />
+            <Button fx:id="addcartbtn8" layoutX="183.0" layoutY="130.0" mnemonicParsing="false" onAction="#buy" opacity="0.0" prefHeight="34.0" prefWidth="108.0" text="addToCart" />
          </children>
       </Pane>
       <Pane layoutX="936.0" layoutY="547.0" prefHeight="200.0" prefWidth="348.0">
          <children>
-            <Rectangle arcHeight="35.0" arcWidth="35.0" fill="#e4ade1" height="150.0" layoutX="57.0" layoutY="15.0" stroke="#ffffff00" strokeLineCap="ROUND" strokeType="INSIDE" width="290.0">
+            <Rectangle arcHeight="35.0" arcWidth="35.0" fill="WHITE" height="150.0" layoutX="57.0" layoutY="15.0" stroke="#ffffff00" strokeLineCap="ROUND" strokeType="INSIDE" width="290.0">
                <effect>
                   <DropShadow offsetY="2.0" spread="0.11">
                      <color>
@@ -768,7 +768,7 @@
                   </DropShadow>
                </effect>
             </Rectangle>
-            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="134.0" layoutX="68.0" layoutY="24.0" stroke="WHITE" strokeLineCap="ROUND" strokeType="INSIDE" width="104.0">
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#e4ade1" height="134.0" layoutX="68.0" layoutY="24.0" stroke="#e4ade1" strokeLineCap="ROUND" strokeType="INSIDE" width="104.0">
                <effect>
                   <DropShadow height="16.32" offsetY="3.0" radius="6.49" spread="0.07" width="11.64">
                      <color>

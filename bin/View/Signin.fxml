@@ -19,7 +19,7 @@
          <font>
             <Font name="SansSerif Bold" size="46.58" />
          </font></Label>
-      <TextField fx:id="mytextfield" layoutX="197.24" layoutY="264.93" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.67" prefWidth="311.51" promptText="Username">
+      <TextField fx:id="mytextfield" layoutX="197.24" layoutY="264.93" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.67" prefWidth="311.51" promptText="Username" style="-fx-background-color: #ffffff;">
          <font>
             <Font name="SansSerif Bold" size="20.0" />
          </font>
@@ -27,7 +27,7 @@
             <DropShadow height="10.0" radius="4.5" width="10.0" />
          </effect></TextField>
       <Line endX="667.5" endY="489.1000061035156" layoutX="-207.0" layoutY="-186.0" startX="667.5" startY="459.0" stroke="#00000034" strokeWidth="1.5" />
-      <PasswordField fx:id="mypasswordfield" layoutX="197.24" layoutY="352.27" prefHeight="43.67" prefWidth="311.51" promptText="Password">
+      <PasswordField fx:id="mypasswordfield" layoutX="197.24" layoutY="352.27" prefHeight="43.67" prefWidth="311.51" promptText="Password" style="-fx-background-color: #ffffff;">
          <font>
             <Font name="SansSerif Bold" size="20.0" />
          </font>
@@ -128,9 +128,9 @@
       </ImageView>
       <Line endX="667.5" endY="489.1000061035156" layoutX="-207.0" layoutY="-100.0" startX="667.5" startY="459.0" stroke="#00000034" strokeWidth="1.5" />
       <Button fx:id="mybutton" layoutX="243.0" layoutY="448.0" mnemonicParsing="false" onAction="#signin" opacity="0.0" prefHeight="79.0" prefWidth="218.0" text="Button" />
-      <Label fx:id="mywarninglabel" layoutX="220.0" layoutY="411.0" text="Username and Password does not match" textFill="#1b0e70" visible="false">
+      <Label fx:id="mywarninglabel" layoutX="240.0" layoutY="411.0" text="Username and Password does not match" textFill="#1b0e70" visible="false">
          <font>
-            <Font name="Arial Black" size="12.0" />
+            <Font name="Arial" size="12.0" />
          </font>
       </Label>
       <Hyperlink layoutX="226.0" layoutY="625.0" onAction="#gotoFB" prefHeight="63.0" prefWidth="58.0" style="-fx-text-fill: transparent; -fx-border-color: transparent;" text="fb" />
