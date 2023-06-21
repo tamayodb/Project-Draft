@@ -7,6 +7,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Optional;
 
+import Model.User;
+import Model.UserRepository;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -197,6 +199,13 @@ public class ProfileController {
         confirmation.setTitle("Sign Out");
         confirmation.setHeaderText(null);
         confirmation.setContentText("Are you sure you want to sign out?");
+
+        Image icon = new Image(getClass().getResourceAsStream("/Images/logout.png"));
+        ImageView iconView = new ImageView(icon);
+        iconView.setFitWidth(50);
+        iconView.setFitHeight(50);
+        confirmation.setGraphic(iconView);
+
         confirmation.showAndWait();
 
         if (confirmation.getResult() == ButtonType.OK) {

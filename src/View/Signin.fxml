@@ -42,7 +42,7 @@
       </ImageView>
       <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="470.0" layoutY="362.0" opacity="0.2">
          <image>
-            <Image url="@../../../pw.png" />
+            <Image url="@../Images/password.png" />
          </image>
       </ImageView>
       <ImageView accessibleRole="BUTTON" fitHeight="56.04" fitWidth="203.97" layoutX="247.46" layoutY="460.71">

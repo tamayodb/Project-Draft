@@ -42,14 +42,14 @@
             <DropShadow height="10.0" radius="4.5" width="10.0" />
          </effect>
       </PasswordField>
-      <ImageView fitHeight="21.0" fitWidth="31.0" layoutX="1155.0" layoutY="410.0" opacity="0.21">
+      <ImageView fitHeight="32.0" fitWidth="31.0" layoutX="1155.0" layoutY="402.0" opacity="0.21">
          <image>
-            <Image url="@../../../mail.png" />
+            <Image url="@../Images/email.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="1157.0" layoutY="481.0" opacity="0.2">
          <image>
-            <Image url="@../../../pw.png" />
+            <Image url="@../Images/password.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="105.53" fitWidth="106.99" layoutX="1273.0" layoutY="-2.0">

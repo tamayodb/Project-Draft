@@ -55,22 +55,22 @@
          </font>
       </Label>
       <Line endX="931.02001953125" endY="3.0517578125E-5" layoutX="289.0" layoutY="281.0" startX="-100.0" stroke="#1b0e70" />
-      <Label layoutX="243.0" layoutY="360.0" text="Username" textFill="#1b0e70">
+      <Label layoutX="264.0" layoutY="360.0" text="Username:" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="279.0" layoutY="414.0" text="Name" textFill="#1b0e70">
+      <Label layoutX="300.0" layoutY="414.0" text="Name:" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="276.0" layoutY="464.0" text="E-mail" textFill="#1b0e70">
+      <Label layoutX="297.0" layoutY="464.0" text="E-mail:" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="204.0" layoutY="516.0" prefHeight="22.0" prefWidth="128.0" text="Phone Number" textFill="#1b0e70">
+      <Label layoutX="223.0" layoutY="516.0" prefHeight="22.0" prefWidth="138.0" text="Phone Number:" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
@@ -137,19 +137,19 @@
          </image>
       </ImageView>
       <Button fx:id="nextimage" layoutX="1145.0" layoutY="439.0" mnemonicParsing="false" onAction="#nextimage" opacity="0.0" prefHeight="42.0" prefWidth="36.0" text="nextimage" />
-      <Label fx:id="usernameLabel" layoutX="351.0" layoutY="360.0" text="Label" textFill="#1b0e70">
+      <Label fx:id="usernameLabel" layoutX="390.0" layoutY="360.0" text="Label" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font></Label>
-      <Label fx:id="nameLabel" layoutX="351.0" layoutY="414.0" text="Label" textFill="#1b0e70">
+      <Label fx:id="nameLabel" layoutX="390.0" layoutY="414.0" text="Label" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font></Label>
-      <Label fx:id="emailLabel" layoutX="351.0" layoutY="464.0" text="Label" textFill="#1b0e70">
+      <Label fx:id="emailLabel" layoutX="390.0" layoutY="464.0" text="Label" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font></Label>
-      <Label fx:id="numberLabel" layoutX="351.0" layoutY="516.0" text="Label" textFill="#1b0e70">
+      <Label fx:id="numberLabel" layoutX="390.0" layoutY="516.0" text="Label" textFill="#1b0e70">
          <font>
             <Font name="Arial" size="19.0" />
          </font></Label>

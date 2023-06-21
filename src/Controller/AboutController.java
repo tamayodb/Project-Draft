@@ -167,6 +167,13 @@ public class AboutController{
         confirmation.setTitle("Sign Out");
         confirmation.setHeaderText(null);
         confirmation.setContentText("Are you sure you want to sign out?");
+
+        Image icon = new Image(getClass().getResourceAsStream("/Images/logout.png"));
+        ImageView iconView = new ImageView(icon);
+        iconView.setFitWidth(50);
+        iconView.setFitHeight(50);
+        confirmation.setGraphic(iconView);
+
         confirmation.showAndWait();
 
         if (confirmation.getResult() == ButtonType.OK) {
